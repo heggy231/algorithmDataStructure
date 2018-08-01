@@ -1,0 +1,50 @@
+
+def NoughtsDeterminer(strArr)
+
+rows = [
+	strArr[0,3], 
+	strArr[4,3], 
+	strArr[8,3]
+]
+
+diags1 = (0..2).collect{|i| rows[i][i] }
+diags2 = [rows[0][2], rows[1][1], rows[2][0]]
+cols = rows.transpose
+
+def iter(ob)
+	ob.each_with_index do |a, inda|
+	a.each_with_index do |t, ind|
+		if t == "-"
+			if a.count("X") == 2 || a.count("O") == 2
+				if inda == 2
+					return ind + 8 
+				elsif inda == 1
+				return ind + 4
+			else
+				return ind
+			end
+			end
+			
+         end
+    end
+  end
+  end
+  
+def nought(ob)
+	ob.each_with_index do |y, ind|
+		 if y == "-" && (ob.count("X" == 2) || ob.count("O" == 2))
+		 	if [ind,ind].first == 2
+		 		return ind + 8
+		 		elsif [ind,ind].first == 1
+		 		return ind + 4
+		 	else
+		 		return ind
+		 	end
+		 end
+	end
+end
+	
+[iter(rows), iter(cols), nought(diags1), nought(diags2)].select { |i| i.is_a? Fixnum }.first
+end
+
+p NoughtsDeterminer(["X","O","X","<>","-","O","O","<>","X","X","O"])

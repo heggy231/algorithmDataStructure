@@ -1,0 +1,6 @@
+function PowersofTwo(num) { 
+  if ((Math.sqrt(num))% 2 === 0) {
+    return true;
+  }
+  return false;
+}

@@ -1,0 +1,17 @@
+function SimpleSymbols(str) { 
+  if (str[0] != "+" && str[0] != "=") { //if 1st character is a letter, return false since it won't be surrounded by "+" on both sides
+      return false;
+      } else if (str[str.length - 1] != "+" && str[str.length - 1] != "=") { //same as above for very last letter
+  return false;
+    } else {
+      for (var i = 1; i < str.length - 1; i++) { //for loop checks whether a character is a letter. If so, function checks for the "+" side on either side
+        if (str[i] != "+" && str[i] != "=") {
+          if (str[i-1] != "+" || str[i+1] != "+") {
+              return false;
+                }
+         
+        }
+      }
+    }
+return true;
+}

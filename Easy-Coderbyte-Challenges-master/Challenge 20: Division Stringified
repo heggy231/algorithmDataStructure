@@ -1,0 +1,7 @@
+function DivisionStringified(num1, num2) { 
+  divNum = Math.round(num1 / num2); //the example says 123456789 should return 12,345 but I prefer to round.
+    divNum = divNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    
+  }
+  return divNum;
+}

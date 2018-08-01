@@ -1,0 +1,9 @@
+function Palindrome(str) {
+  var origStr = str.split(" ").join("");
+ var revStr = origStr.split("").reverse().join("");
+  if (origStr == revStr) {
+    return true;
+  }
+  return false;
+}
+  

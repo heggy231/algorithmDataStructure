@@ -1,0 +1,5 @@
+function VowelCount(str) { 
+var vowelArray = str.match(/[aeiou]/gi); 
+  return vowelArray.length;
+}
+   

@@ -1,0 +1,7 @@
+function LetterCapitalize(str) {
+  str = str.replace(/\b\w/g, function (capLetter) { //the regex pattern finds the first letter of each word, and the function replaces the letter w/ the capitalized version.
+  capLetter = capLetter.toUpperCase();
+               return capLetter;
+  });
+  return str;
+}

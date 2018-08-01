@@ -1,0 +1,8 @@
+function ExOh(str) {
+  var xArray = str.match(/x/gi);
+  var oArray = str.match(/o/gi);
+  if (xArray.length == oArray.length) {
+    return true;
+  }
+  return false;
+}

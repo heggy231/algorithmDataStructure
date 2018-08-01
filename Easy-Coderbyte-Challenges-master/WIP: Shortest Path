@@ -1,0 +1,19 @@
+def ShortestPath(strArr)
+n = strArr[0].to_i
+  ends = []
+  ends.insert(0, strArr[1], strArr[n])
+  
+  first = strArr.drop(n + 1).select do |x|
+    x =~ /(#{ends[0]})/
+    end
+  last = strArr.drop(n + 1).select do |x|
+    x =~ /(#{ends[1]})/
+    end
+  
+  ret = last.select do |x|
+    first.each do |y|
+      x =~ /\.-#{y}/
+      end
+    end
+  ret
+end

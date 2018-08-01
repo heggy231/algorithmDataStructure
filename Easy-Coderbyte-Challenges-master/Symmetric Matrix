@@ -1,0 +1,21 @@
+require 'matrix'
+def SymmetricMatrix(strArr)
+m = strArr.join.scan(/(-?\d+)(?!\d)/)
+	t = m.map do |x|
+		x.map do |y|
+			y.split('')
+	end
+	end
+	minput = t.flatten(1)
+	
+		mat = Matrix.rows(minput)
+	
+	
+		return "symmetric" if mat == mat.transpose
+
+		return "not possible" if mat.square? == false
+		
+		return "not symmetric"
+
+end
+p SymmetricMatrix(["1","2","4","<>","2","1"])

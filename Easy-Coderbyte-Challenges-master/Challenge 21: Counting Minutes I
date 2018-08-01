@@ -1,0 +1,17 @@
+function CountingMinutesI(str) { 
+  str = str.replace(/^[(12)](?=\:\d{2}pm)/gi, function (pmHr) {
+    return parseInt(pmHr) + 12;
+  });
+  str = str.replace(/(12)(?=\:\d{2}am)/gi, function (amHr) {
+    return parseInt(amHr) - 12;
+  });
+  var hours = (str.match(/\d\d?(?=\:)/g)).map(Number);
+  var minutes = (str.match(/\d{2}(?=\w{2})/g)).map(Number);
+  var hr1Mins = (hours[0] * 60) + minutes[0];
+  var hr2Mins = (hours[1] * 60) + minutes[1];
+  if (hr1Mins > hr2Mins) {
+    return ((24 * 60) - hr1Mins) + hr2Mins;
+  } else {
+    return hr2Mins - hr1Mins;
+  }
+}

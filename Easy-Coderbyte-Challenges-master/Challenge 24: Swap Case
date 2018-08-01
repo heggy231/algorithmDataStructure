@@ -1,0 +1,17 @@
+function SwapCase(str) {
+
+var strArr = str.split("");
+
+for (var i = 0; i < strArr.length; i++){
+if (strArr[i].match(/[A-Z]/)){
+  strArr[i] = strArr[i].toLowerCase();
+  } else {
+  strArr[i] = strArr[i].toUpperCase();
+  }
+  
+newStr = strArr.join("");
+}
+
+  return newStr;
+         
+}

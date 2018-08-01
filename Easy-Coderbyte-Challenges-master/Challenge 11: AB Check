@@ -1,0 +1,7 @@
+function ABCheck(str) { 
+  var found = /[ab]\w{3}[ab]/gi.test(str);
+  if (found === false) {
+    return /[ab]\s\w{2}[ab]/gi.test(str) || /[ab]\w{2}\s[ab]/gi.test(str); //assuming no more than 1 space between words for now
+  }
+ return found;
+}

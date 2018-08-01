@@ -1,0 +1,4 @@
+function WordCount(str) { 
+var matchArray = str.match(/\b\w+/gi);
+  return matchArray.length;
+}

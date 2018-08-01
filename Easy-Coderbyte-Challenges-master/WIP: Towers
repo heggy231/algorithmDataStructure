@@ -1,0 +1,32 @@
+answer = [4, 3, 2, 1]
+
+pile_1 = [4, 3, 2, 1]
+pile_2 = []
+pile_3 = []
+
+until pile_2 == answer || pile_3 == answer do
+	puts "which pile are you picking from?"
+	pick = gets.chomp
+	 if 'pile_1' == pick.to_s 
+	     piece = pile_1.pop
+	     pile_1
+	     
+	elsif 'pile_2' == pick.to_s
+	    piece = pile_2.pop
+	    pile_2
+	    
+	elsif  'pile_3' == pick.to_s
+	    piece = pile_3.pop
+	    pile_3
+	end
+	
+	print "where are you moving the piece?"
+	new_pile = gets.chomp
+	pile_1 << piece if 'pile_1' == new_pile.to_s
+	pile_2 << piece if 'pile_2' == new_pile.to_s
+	pile_3 << piece if 'pile_3' == new_pile.to_s
+	
+	print pile_1
+	print pile_2
+	print pile_3
+end

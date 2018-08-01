@@ -1,0 +1,8 @@
+function CheckNums(num1,num2) { 
+  if (num1 == num2) {
+    return -1;
+  } else {
+    return num2 > num1;
+}
+}
+   //function checks whether num2 is greater than num1, returns -1 if the two are equal. 
